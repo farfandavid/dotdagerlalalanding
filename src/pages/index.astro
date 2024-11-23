@@ -12,6 +12,7 @@ import {
 	CodeIcon,
 	Volume,
 } from "../components/icons";
+import Modal from "../components/Modal.astro";
 ---
 
 <Layout title="Dot Dager">
@@ -296,8 +297,9 @@ import {
 			</div>
 		</section>
 	</main>
-	<footer class="flex justify-center">
+	<footer class="flex justify-center items-center gap-2">
 		<p>&copy; 2024 Dot Dager</p>
+		<Modal iframeSrc="https://tbot.xyz/lumber/" buttonText="Lumberjack" />
 	</footer>
 </Layout>
 <style>
@@ -335,6 +337,7 @@ import {
 
 	playAudio.addEventListener("click", (e) => {
 		bgm.volume = 0.1;
+		bgm.loop = true;
 		playAudio.children[0].classList.toggle("hidden");
 		playAudio.classList.toggle("animate-pulse");
 		playAudio.children[1].classList.toggle("hidden");
